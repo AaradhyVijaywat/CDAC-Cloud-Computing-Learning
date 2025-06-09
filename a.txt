@@ -1,0 +1,18 @@
+This is a locally created file , which has been created using 
+
+$ git clone https://github.com/AaradhyVijaywat/CDAC-Cloud-Computing-Learning.git
+
+cd CDAC-Cloud-Computing-Learning
+
+$ touch a.txt
+
+$ git add a.txt
+
+$ git commit -m "Created a text file"
+
+$ git push origin main
+
+$ git pull origin main
+
+$ git log
+
