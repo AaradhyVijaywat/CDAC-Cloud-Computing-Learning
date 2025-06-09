@@ -1,1 +1,5 @@
-
+We can simply create a folder in github using these steps 
+- click on + icon on the right side of github repo
+- create a file 
+- for creating a folder give a name to the file and add / after that it will create a new folder for you 
+- Remember you cannot create a folder without any file , add a file in that folder by simply writing the name of file then commit changes
