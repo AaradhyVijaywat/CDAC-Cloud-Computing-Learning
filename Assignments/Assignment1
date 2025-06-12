@@ -1,0 +1,112 @@
+#Assignment 1
+Q. Create a local git repository in your local machine first.
+Commit the initial code
+Q. Update the code on the remote server . Also perform some changes on
+remote n reflect the same on local.[push/pull operations]
+Q. Create g1 branch on the github..................Add 1 txt file .................Raise a
+pull request on remote from g1 towards main........................... and merge
+without conflicts.
+Local git: Use git commands to
+o Get the updated files
+o Perform reset
+o List the changes
+o Create local branches main&gt;&gt;&gt;b1,update........b1&gt;&gt;&gt;&gt;b2,update b2&gt;&gt;&gt;&gt;&gt;b3
+and update them as well.
+o List the changes [via diff and via ls]
+Demonstrate diff between local branches
+Perform LOCAL merging operation and after that delete the unnecessary ones
+locally as well as remote
+Perform fork operations on your repository as well.
+
+
+
+
+# -------------------------
+# Step 1: Initialize Local Repository
+# -------------------------
+mkdir my-git-repo
+cd my-git-repo
+git init
+echo "Initial project code" > index.html
+git add .
+git commit -m "Initial commit"
+
+# -------------------------
+# Step 2: Connect to Remote and Push
+# -------------------------
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
+git push -u origin main
+
+# Make changes in GitHub (add README.md manually), then:
+git pull origin main
+
+# -------------------------
+# Step 3: Create Branch g1, Add File, Raise PR
+# -------------------------
+git checkout -b g1
+echo "This is a new file in g1" > g1_notes.txt
+git add g1_notes.txt
+git commit -m "Add g1_notes.txt"
+git push origin g1
+
+# Go to GitHub -> Create Pull Request from g1 to main -> Merge
+
+# -------------------------
+# Step 4: Update Local - Reset, List Changes
+# -------------------------
+git pull origin main
+git status
+git diff
+
+git reset --soft HEAD~1   # Reset last commit (keep files)
+git reset --hard HEAD~1   # Reset and discard last commit
+
+# -------------------------
+# Step 5: Create and Update Local Branches
+# -------------------------
+git checkout -b b1
+
+echo "B1 updates" > b1.txt
+git add b1.txt
+git commit -m "B1 changes"
+
+git checkout -b b2
+
+echo "B2 updates" > b2.txt
+git add b2.txt
+git commit -m "B2 changes"
+
+git checkout -b b3
+
+echo "B3 updates" > b3.txt
+git add b3.txt
+git commit -m "B3 changes"
+
+# -------------------------
+# Step 6: List Changes
+# -------------------------
+git diff b1 b2
+git diff b2 b3
+ls
+
+# -------------------------
+# Step 7: Local Merge and Delete
+# -------------------------
+git checkout main
+git merge b1
+
+git branch -d b1
+
+git push origin --delete b1   # delete remote branch
+
+# -------------------------
+# Step 8: Fork Repository
+# -------------------------
+# 1. Go to GitHub, open the repo
+# 2. Click on "Fork"
+# 3. Your own copy is created at github.com/YOUR_USERNAME
+
+# To clone the forked repo:
+git clone https://github.com/YOUR_USERNAME/FORKED_REPO.git
+
+cd FORKED_REPO
